@@ -25,7 +25,7 @@ def weight2posit(m, n=8, es=1):
 
     if isinstance(m, nn.Linear):
         m.weight_p = to_posit(m.weight.data.numpy(), n, es).T
-        if m.bias is None:
+        if m.bias is not None:
             m.bias_p = to_posit(m.bias.data.numpy(), n, es)
 
 
